@@ -1,0 +1,95 @@
+body{
+	background-color: red;
+}
+p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.title-nav{
+	background-color: #417690;
+}
+.title-nav .title-nav-link{
+	color: #fff;
+}
+.row{
+    margin-top:3px;
+    margin-bottom:3px;
+}
+.signup-main{
+	border: 1px solid #eaeaea;
+    border-radius: 4px;
+	width: 400px;
+    background: #fff;
+    text-align: center;
+    margin: 100px auto;
+    padding: 20px;
+}
+.title-nav{
+    background:#ff7387;
+}
+.navbar-light .navbar-nav .head-nav a{
+    color:#fff;
+    font-weight:bold;
+}
+.title-nav h1{
+    font-size:1.6rem;
+    font-weight:bold;
+}
+.btn-outline-secondary:hover{
+    color:#333;
+    font-weight:bold;
+}
+.main-itemul ,.head-itemul{
+    display:block;
+    font-size: 0;
+}
+.main-itemli{
+    font-size: 18px;
+    display:inline-block;
+    overflow:hidden;
+    height:400px;
+    border:0;
+}
+.main-itemli img ,.head-itemli img{
+    width:100%;
+    object-fit: contain;
+    height:200px;
+}
+.head-list-wrapper{
+    background-color:#efefef;
+    margin:0;
+}
+
+.head-itemli{
+    overflow:hidden;
+    height:360px;
+}
+.head-itemli img{
+    height:200px;
+
+}
+.head-itemli-a h3{
+    font-size:1rem;
+    font-weight:bold;
+}
+.head-itemli-a{
+    background-color:#efefef;
+    border:none;
+    white-space: normal;
+}
+.head-memo{
+    overflow:hidden;
+    height:92px;
+}
+.nowrap{
+    white-space: nowrap;
+}
+.main-title{
+    overflow:hidden;
+    height:56px;
+}
+.list-wrapper{
+    border: 4px #ff7387 solid;
+    border-radius:10px;
+    padding:10px;
+}

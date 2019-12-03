@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>最強アイテム</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="{% static "app/css/app.css" %}" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light title-nav">
+		<a class="navbar-brand title-nav-link" href="{% url 'index'%}"><h1>最強アイテム</h1></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false"
+            aria-label="ナビゲーションの切替">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="Navber">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item head-nav">
+                    {% if request.user.is_authenticated %}
+                        <a class="nav-link" href="{% url 'admin:logout'%}">ログアウト</a>
+                    {% else %}
+                        <a class="nav-link" href="{% url 'admin:login'%}">ログイン</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+	{% if  randitem  %}
+		<div class="row head-list-wrapper">
+			<div class="col-lg-10 offset-lg-1 col-md-12">
+				<ul class="list-group head-itemul my-3">
+					{% for item in randitem %}
+					<a class="btn btn-outline-secondary head-itemli-a col-4" href="{% url 'detail' item.pk %}">
+					<li class="list-group-item head-itemli">
+
+						<div class="row">
+
+							<div class="col-12">
+								{% if  "https://images" in item.image  %}
+									<img src={{ item.image }}>
+								{% else %}
+									<img src="http://via.placeholder.com/350x300">
+								{% endif %}
+							</div>
+						</div>
+						<div class="row">
+
+							<div class="col-12 nowrap">
+								<h3>{{ item.name}}</h3>
+							</div>
+						</div>
+						<div class="row">
+
+							<div class="col-12 head-memo">
+								<p>{{ item.memo|linebreaksbr }}</p>
+							</div>
+						</div>
+
+
+					</li>
+					</a>
+					{% empty %}
+					<li class="list-group-item">
+
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	{% endif %}
+    {% block content %}
+    {% endblock %}
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="{% static "app/js/plugins/responsive-paginate.js" %}"></script>
+    <script src="{% static "app/js/app.js" %}"></script>
+</body>
+
+</html>
