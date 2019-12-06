@@ -135,3 +135,14 @@ LOGOUT_REDIRECT_URL='/'
 
 # django-crispy-forms 設定
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+DEBUG = False
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
