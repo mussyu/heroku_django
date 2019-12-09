@@ -1,3 +1,4 @@
+import django_heroku
 """
 Django settings for project project.
 
@@ -136,7 +137,6 @@ LOGOUT_REDIRECT_URL='/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
-import django_heroku
 ###################################
 #      末尾に以下を追加
 ###################################
