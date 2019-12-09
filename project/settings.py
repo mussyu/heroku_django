@@ -145,15 +145,7 @@ except ImportError:
 
 
 
-
-
-
-
-
-
-
-
-
-import django_heroku
-django_heroku.settings(locals())
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
 
