@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
+import django_heroku  #冒頭に追加
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -136,16 +136,28 @@ LOGOUT_REDIRECT_URL='/'
 # django-crispy-forms 設定
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+
+
+###################################
+#      末尾に以下を追加
+###################################
+
+# for Heroku
+
+import dj_database_url
+DATABASES['default'] = dj_database_url.config()
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['*']
+
+STATIC_ROOT = 'staticfiles'
+
 DEBUG = False
 
 try:
     from .local_settings import *
 except ImportError:
-    pass
-
-
-
-if not DEBUG:
-    import django_heroku
-    django_heroku.settings(locals())
-
+    pass
+# Activate Django-Heroku.
+django_heroku.settings(locals())
