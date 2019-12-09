@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-import django_heroku  #冒頭に追加
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -137,7 +136,7 @@ LOGOUT_REDIRECT_URL='/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
-
+import django_heroku
 ###################################
 #      末尾に以下を追加
 ###################################
