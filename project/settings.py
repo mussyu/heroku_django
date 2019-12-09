@@ -158,6 +158,6 @@ DEBUG = False
 try:
     from .local_settings import *
 except ImportError:
-    pass
+    pass
 # Activate Django-Heroku.
 django_heroku.settings(locals())
