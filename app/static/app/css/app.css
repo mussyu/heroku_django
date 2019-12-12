@@ -34,6 +34,15 @@ p{
 .title-nav h1{
     font-size:1.6rem;
     font-weight:bold;
+    border-bottom: solid 4px red;
+    border-left: solid 4px red;
+    border-right: solid 4px red;
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 20px;
+    padding: 10px;
+    border-top-style: dotted;
 }
 .btn-outline-secondary:hover{
     color:#333;

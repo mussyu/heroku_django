@@ -1,5 +1,5 @@
 """
-WSGI config for project project.
+WSGI config for mysite project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -14,7 +14,3 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
 
 application = get_wsgi_application()
-
-# ファイルの末尾に以下を追記
-from whitenoise.django import DjangoWhiteNoise
-application = DjangoWhiteNoise(application)

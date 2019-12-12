@@ -34,6 +34,7 @@ class Item(models.Model):
     link = models.TextField(
         verbose_name='URL',
         max_length=600,
+
     )
     image = models.TextField(
         verbose_name='画像',
